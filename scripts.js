@@ -1,4 +1,5 @@
 questionBoxSelector = document.getElementById('questionBox');
+answerBoxSelector = document.getElementById('answerBox')
 
 
 var firstQuestion = document.createElement('li')
@@ -16,8 +17,10 @@ questionBoxSelector.appendChild(secondQuestion)
 var firstAnswer = document.createElement('li')
 
 firstAnswer.setAttribute("class","answer")
-firstQuestion.textContent = "First Question"
+firstAnswer.textContent = "First Answer"
 
-var secondQuestion = document.createElement('li')
-secondQuestion.setAttribute("class","questions")
-secondQuestion.textContent = "Second Question"
+var firstAnswer = document.createElement('li')
+firstAnswer.setAttribute("class","answer")
+firstAnswer.textContent = "First Answer"
+
+answerBoxSelector.appendChild(firstAnswer)
