@@ -315,8 +315,10 @@ function Page3() {
             clearQuestion = document.getElementById('answerBox')
             clearQuestion.innerHTML = ""
 
+
+            userName = prompt("Please enter your initials");
             let HighScoreCounter = document.getElementById('main');
-            HighScoreCounter.innerHTML = ("Your Total Score is " + UserScore)
+            HighScoreCounter.innerHTML = (userName + " Your Total Score is " + UserScore)
         }
 function setTime() {
 
