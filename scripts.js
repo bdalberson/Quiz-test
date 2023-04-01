@@ -1,6 +1,6 @@
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
 
-var GuessAnswerOne = "Miss. That's her personal title"
+var GuessAnswerOne = "Ms. That's her personal title"
 
 var GuessAnswerTwo = "Microsoft"
 
@@ -15,7 +15,8 @@ var GuessAnswerFour = "Mono Sodium"
 
 const startButton = document.getElementById("button");
 startButton.addEventListener("click", function() {
-  
+startButton.style.display = 'none';
+
 questionBoxSelector = document.getElementById('questionBox');
 answerBoxSelector = document.getElementById('answerBox')
 
