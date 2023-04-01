@@ -13,10 +13,9 @@ var GuessAnswerFour = "Mono Sodium"
 
 
 
-
-
-
-
+const startButton = document.getElementById("button");
+startButton.addEventListener("click", function() {
+  
 questionBoxSelector = document.getElementById('questionBox');
 answerBoxSelector = document.getElementById('answerBox')
 
@@ -56,3 +55,4 @@ forthAnswer.setAttribute("class","answer")
 forthAnswer.textContent = GuessAnswerFour
 
 answerBoxSelector.appendChild(forthAnswer)
+});
