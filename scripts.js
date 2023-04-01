@@ -108,6 +108,7 @@ answerBoxSelector.appendChild(answerFourButton)
 
 function Page2w(){
     UserScore += 1
+    secondsLeft += 10
     Page2()
 }
 
@@ -173,11 +174,12 @@ answerBoxSelector.appendChild(answerFourButton)
 
 function Page3w(){
     UserScore += 1
+    secondsLeft += 10
     Page3()
 }
 
 function Page3() {
-
+    secondsLeft -= 10
     clearElement = document.getElementById('questionBox')
     clearElement.innerHTML = ""
     
@@ -237,11 +239,12 @@ function Page3() {
 
     function Page4w() {
         UserScore += 1
+        secondsLeft += 10
         Page4()
     }
 
     function Page4() {
-
+        secondsLeft -= 10
         clearElement = document.getElementById('questionBox')
         clearElement.innerHTML = ""
         
