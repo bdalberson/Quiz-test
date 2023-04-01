@@ -51,6 +51,7 @@ var GuessAnswerFour4 = "Madonna"
 
 const startButton = document.getElementById("startbutton");
 startButton.addEventListener("click", function() {
+setTime();
 startButton.style.display = 'none';
 
 let questionBoxSelector = document.getElementById('questionBox');
@@ -323,4 +324,3 @@ timerDisplay.textContent = secondsLeft
     clearInterval(timerInterval);
     Page5();}}, 1000); 
 }
-setTime();
