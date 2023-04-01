@@ -23,6 +23,17 @@ var GuessAnswerThree2 = "Magnavox Odyssey²"
 
 var GuessAnswerFour2 = "Atari 2600"
 
+var GuessQuestionThree = "Which of the following is NOT a cryptocurrency?"
+
+
+var GuessAnswerOne3 = "Bored Ape"
+
+var GuessAnswerTwo3 = "Bitcoin"
+
+var GuessAnswerThree3 = "Etherum"
+
+var GuessAnswerFour3 = "USDC"
+
 
 const startButton = document.getElementById("startbutton");
 startButton.addEventListener("click", function() {
@@ -103,6 +114,7 @@ let answerBoxSelector = document.getElementById('answerBox')
 
 var answerOneButton = document.createElement("button");
 answerOneButton.innerHTML = GuessAnswerOne2;
+answerOneButton.addEventListener("click", function() {Page3()})
 var firstAnswer = document.createElement('li')
 firstAnswer.setAttribute("class","answer")
 firstAnswer.textContent = GuessAnswerOne2
@@ -112,6 +124,7 @@ answerBoxSelector.appendChild(answerOneButton)
 
 var answerTwoButton = document.createElement("button");
 answerTwoButton.innerHTML = GuessAnswerTwo2;
+answerTwoButton.addEventListener("click", function() {Page3()})
 var secondAnswer = document.createElement('li')
 secondAnswer.setAttribute("class","answer")
 secondAnswer.textContent = GuessAnswerTwo2
@@ -120,6 +133,7 @@ answerBoxSelector.appendChild(answerTwoButton)
 
 var answerThreeButton = document.createElement("button");
 answerThreeButton.innerHTML = GuessAnswerThree2;
+answerThreeButton.addEventListener("click", function() {Page3()})
 var thirdAnswer = document.createElement('li')
 thirdAnswer.setAttribute("class","answer")
 thirdAnswer.textContent = GuessAnswerThree2
@@ -128,6 +142,7 @@ answerBoxSelector.appendChild(answerThreeButton)
 
 var answerFourButton = document.createElement("button");
 answerFourButton.innerHTML = GuessAnswerFour2;
+answerFourButton.addEventListener("click", function() {Page3()})
 var forthAnswer = document.createElement('li')
 forthAnswer.setAttribute("class","answer")
 forthAnswer.textContent = GuessAnswerFour2
@@ -135,3 +150,58 @@ forthAnswer.textContent = GuessAnswerFour2
 answerBoxSelector.appendChild(answerFourButton)
 
 }
+
+function Page3() {
+
+    clearElement = document.getElementById('questionBox')
+    clearElement.innerHTML = ""
+    
+    clearQuestion = document.getElementById('answerBox')
+    clearQuestion.innerHTML = ""
+    
+    
+    
+    let questionBoxSelector = document.getElementById('questionBox');
+    let firstQuestion = document.createElement('li')
+    firstQuestion.setAttribute("class","questions")
+    firstQuestion.textContent = GuessQuestionThree
+    questionBoxSelector.appendChild(firstQuestion)
+    
+    
+    let answerBoxSelector = document.getElementById('answerBox')
+    
+    
+    var answerOneButton = document.createElement("button");
+    answerOneButton.innerHTML = GuessAnswerOne3;
+    var firstAnswer = document.createElement('li')
+    firstAnswer.setAttribute("class","answer")
+    firstAnswer.textContent = GuessAnswerOne3
+    
+    answerBoxSelector.appendChild(answerOneButton)
+    
+    
+    var answerTwoButton = document.createElement("button");
+    answerTwoButton.innerHTML = GuessAnswerTwo3;
+    var secondAnswer = document.createElement('li')
+    secondAnswer.setAttribute("class","answer")
+    secondAnswer.textContent = GuessAnswerTwo3
+    
+    answerBoxSelector.appendChild(answerTwoButton)
+    
+    var answerThreeButton = document.createElement("button");
+    answerThreeButton.innerHTML = GuessAnswerThree3;
+    var thirdAnswer = document.createElement('li')
+    thirdAnswer.setAttribute("class","answer")
+    thirdAnswer.textContent = GuessAnswerThree3
+    
+    answerBoxSelector.appendChild(answerThreeButton)
+    
+    var answerFourButton = document.createElement("button");
+    answerFourButton.innerHTML = GuessAnswerFour3;
+    var forthAnswer = document.createElement('li')
+    forthAnswer.setAttribute("class","answer")
+    forthAnswer.textContent = GuessAnswerFour3
+    
+    answerBoxSelector.appendChild(answerFourButton)
+    
+    }
