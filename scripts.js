@@ -1,5 +1,9 @@
 var PageNumberVaribale = 1
 var UserScore = 0
+var timerDisplay = document.getElementById("timer")
+var timeClass = document.querySelector(".time");
+var secondsLeft = 60;
+
 
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
 
@@ -309,3 +313,14 @@ function Page3() {
             let HighScoreCounter = document.getElementById('main');
             HighScoreCounter.innerHTML = ("Your Total Score is " + UserScore)
         }
+function setTime() {
+
+var timerInterval = setInterval(function() {
+secondsLeft--;
+
+timerDisplay.textContent = secondsLeft
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+    Page5();}}, 1000); 
+}
+setTime();
