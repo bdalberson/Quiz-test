@@ -112,7 +112,8 @@ function Page2w(){
 }
 
 function Page2() {
-
+secondsLeft -= 10
+timerDisplay.textContent = secondsLeft
 clearElement = document.getElementById('questionBox')
 clearElement.innerHTML = ""
 
@@ -304,7 +305,7 @@ function Page3() {
         }
 
         function Page5() {
-
+            timerDisplay.style.display = 'none';
             clearElement = document.getElementById('questionBox')
             clearElement.innerHTML = ""
             
@@ -320,7 +321,6 @@ var timerInterval = setInterval(function() {
 secondsLeft--;
 
 timerDisplay.textContent = secondsLeft
-  if(secondsLeft === 0) {
-    clearInterval(timerInterval);
-    Page5();}}, 1000); 
+if(secondsLeft === 0) {
+    Page5()}}, 1000); 
 }
