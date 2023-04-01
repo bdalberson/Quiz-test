@@ -1,4 +1,3 @@
-var PageNumberVaribale = 1
 var UserScore = 0
 var timerDisplay = document.getElementById("timer")
 var timeClass = document.querySelector(".time");
@@ -317,6 +316,7 @@ function Page3() {
 
 
             userName = prompt("Please enter your initials");
+            localStorage.setItem(userName, UserScore);
             let HighScoreCounter = document.getElementById('main');
             HighScoreCounter.innerHTML = (userName + " Your Total Score is " + UserScore)
         }
