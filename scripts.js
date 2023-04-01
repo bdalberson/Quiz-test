@@ -12,38 +12,38 @@ var GuessAnswerThree = "Micro Shaft"
 var GuessAnswerFour = "Mono Sodium"
 
 
+var GuessQuestionTwo = "Which gaming console came first?"
 
 
 
 
 
-const startButton = document.getElementById("button");
+const startButton = document.getElementById("startbutton");
 startButton.addEventListener("click", function() {
 startButton.style.display = 'none';
 
-questionBoxSelector = document.getElementById('questionBox');
-answerBoxSelector = document.getElementById('answerBox')
+let questionBoxSelector = document.getElementById('questionBox');
+var answerBoxSelector = document.getElementById('answerBox')
 
 
-var firstQuestion = document.createElement('li')
+let firstQuestion = document.createElement('li')
 firstQuestion.setAttribute("class","questions")
 firstQuestion.textContent = GuessQuestionOne
 questionBoxSelector.appendChild(firstQuestion)
 
-// var secondQuestion = document.createElement('li')
-// secondQuestion.setAttribute("class","questions")
-// secondQuestion.textContent = "Second Question"
-// questionBoxSelector.appendChild(secondQuestion)
+let secondQuestion = document.createElement('li')
+secondQuestion.setAttribute("class","questions")
+secondQuestion.textContent = GuessQuestionTwo
 
 
 var answerOneButton = document.createElement("button");
 answerOneButton.innerHTML = GuessAnswerOne;
+answerOneButton.addEventListener("click", function() {Page2()})
 var firstAnswer = document.createElement('li')
 firstAnswer.setAttribute("class","answer")
 firstAnswer.textContent = GuessAnswerOne
 
 answerBoxSelector.appendChild(answerOneButton)
-
 
 
 var answerTwoButton = document.createElement("button");
@@ -70,3 +70,18 @@ forthAnswer.textContent = GuessAnswerFour
 
 answerBoxSelector.appendChild(answerFourButton)
 });
+
+
+function Page2() {
+
+clearElement = document.getElementById('questionBox')
+clearElement.innerHTML = ""
+let questionBoxSelector = document.getElementById('questionBox');
+let firstQuestion = document.createElement('li')
+firstQuestion.setAttribute("class","questions")
+firstQuestion.textContent = GuessQuestionTwo
+questionBoxSelector.appendChild(firstQuestion)
+
+
+
+}
