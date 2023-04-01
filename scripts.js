@@ -1,5 +1,5 @@
 var PageNumberVaribale = 1
-
+var UserScore = 0
 
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
 
@@ -75,7 +75,7 @@ answerBoxSelector.appendChild(answerOneButton)
 
 var answerTwoButton = document.createElement("button");
 answerTwoButton.innerHTML = GuessAnswerTwo;
-answerTwoButton.addEventListener("click", function() {Page2()})
+answerTwoButton.addEventListener("click", function() {Page2w()})
 var secondAnswer = document.createElement('li')
 secondAnswer.setAttribute("class","answer")
 secondAnswer.textContent = GuessAnswerTwo
@@ -101,6 +101,10 @@ forthAnswer.textContent = GuessAnswerFour
 answerBoxSelector.appendChild(answerFourButton)
 });
 
+function Page2w(){
+    UserScore += 1
+    Page2()
+}
 
 function Page2() {
 
@@ -152,13 +156,18 @@ answerBoxSelector.appendChild(answerThreeButton)
 
 var answerFourButton = document.createElement("button");
 answerFourButton.innerHTML = GuessAnswerFour2;
-answerFourButton.addEventListener("click", function() {Page3()})
+answerFourButton.addEventListener("click", function() {Page3w()})
 var forthAnswer = document.createElement('li')
 forthAnswer.setAttribute("class","answer")
 forthAnswer.textContent = GuessAnswerFour2
 
 answerBoxSelector.appendChild(answerFourButton)
 
+}
+
+function Page3w(){
+    UserScore += 1
+    Page3()
 }
 
 function Page3() {
@@ -183,7 +192,7 @@ function Page3() {
     
     var answerOneButton = document.createElement("button");
     answerOneButton.innerHTML = GuessAnswerOne3;
-    answerOneButton.addEventListener("click", function() {Page4()})
+    answerOneButton.addEventListener("click", function() {Page4w()})
     var firstAnswer = document.createElement('li')
     firstAnswer.setAttribute("class","answer")
     firstAnswer.textContent = GuessAnswerOne3
@@ -220,6 +229,11 @@ function Page3() {
     
     }
 
+    function Page4w() {
+        UserScore += 1
+        Page4()
+    }
+
     function Page4() {
 
         clearElement = document.getElementById('questionBox')
@@ -242,6 +256,7 @@ function Page3() {
         
         var answerOneButton = document.createElement("button");
         answerOneButton.innerHTML = GuessAnswerOne4;
+        answerOneButton.addEventListener("click", function() {Page5()})
         var firstAnswer = document.createElement('li')
         firstAnswer.setAttribute("class","answer")
         firstAnswer.textContent = GuessAnswerOne4
@@ -251,6 +266,7 @@ function Page3() {
         
         var answerTwoButton = document.createElement("button");
         answerTwoButton.innerHTML = GuessAnswerTwo4;
+        answerTwoButton.addEventListener("click", function() {Page5()})
         var secondAnswer = document.createElement('li')
         secondAnswer.setAttribute("class","answer")
         secondAnswer.textContent = GuessAnswerTwo4
@@ -259,6 +275,7 @@ function Page3() {
         
         var answerThreeButton = document.createElement("button");
         answerThreeButton.innerHTML = GuessAnswerThree4;
+        answerThreeButton.addEventListener("click", function() {Page5w()})
         var thirdAnswer = document.createElement('li')
         thirdAnswer.setAttribute("class","answer")
         thirdAnswer.textContent = GuessAnswerThree4
@@ -267,10 +284,28 @@ function Page3() {
         
         var answerFourButton = document.createElement("button");
         answerFourButton.innerHTML = GuessAnswerFour4;
+        answerFourButton.addEventListener("click", function() {Page5()})
         var forthAnswer = document.createElement('li')
         forthAnswer.setAttribute("class","answer")
         forthAnswer.textContent = GuessAnswerFour4
         
         answerBoxSelector.appendChild(answerFourButton)
         
+        }
+
+        function Page5w(){
+            UserScore += 1
+            Page5()
+        }
+
+        function Page5() {
+
+            clearElement = document.getElementById('questionBox')
+            clearElement.innerHTML = ""
+            
+            clearQuestion = document.getElementById('answerBox')
+            clearQuestion.innerHTML = ""
+
+            let HighScoreCounter = document.getElementById('main');
+            HighScoreCounter.innerHTML = ("Your Total Score is " + UserScore)
         }
