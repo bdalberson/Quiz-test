@@ -34,6 +34,16 @@ var GuessAnswerThree3 = "Etherum"
 
 var GuessAnswerFour3 = "USDC"
 
+var GuessQuestionFour = "Which artist had the most hit singles?"
+
+var GuessAnswerOne4 = "Elvis Presley"
+
+var GuessAnswerTwo4 = "The Rolling Stones"
+
+var GuessAnswerThree4 = "The Beatles"
+
+var GuessAnswerFour4 = "Madonna"
+
 
 const startButton = document.getElementById("startbutton");
 startButton.addEventListener("click", function() {
@@ -173,6 +183,7 @@ function Page3() {
     
     var answerOneButton = document.createElement("button");
     answerOneButton.innerHTML = GuessAnswerOne3;
+    answerOneButton.addEventListener("click", function() {Page4()})
     var firstAnswer = document.createElement('li')
     firstAnswer.setAttribute("class","answer")
     firstAnswer.textContent = GuessAnswerOne3
@@ -182,6 +193,7 @@ function Page3() {
     
     var answerTwoButton = document.createElement("button");
     answerTwoButton.innerHTML = GuessAnswerTwo3;
+    answerTwoButton.addEventListener("click", function() {Page4()})
     var secondAnswer = document.createElement('li')
     secondAnswer.setAttribute("class","answer")
     secondAnswer.textContent = GuessAnswerTwo3
@@ -190,6 +202,7 @@ function Page3() {
     
     var answerThreeButton = document.createElement("button");
     answerThreeButton.innerHTML = GuessAnswerThree3;
+    answerThreeButton.addEventListener("click", function() {Page4()})
     var thirdAnswer = document.createElement('li')
     thirdAnswer.setAttribute("class","answer")
     thirdAnswer.textContent = GuessAnswerThree3
@@ -198,6 +211,7 @@ function Page3() {
     
     var answerFourButton = document.createElement("button");
     answerFourButton.innerHTML = GuessAnswerFour3;
+    answerFourButton.addEventListener("click", function() {Page4()})
     var forthAnswer = document.createElement('li')
     forthAnswer.setAttribute("class","answer")
     forthAnswer.textContent = GuessAnswerFour3
@@ -205,3 +219,58 @@ function Page3() {
     answerBoxSelector.appendChild(answerFourButton)
     
     }
+
+    function Page4() {
+
+        clearElement = document.getElementById('questionBox')
+        clearElement.innerHTML = ""
+        
+        clearQuestion = document.getElementById('answerBox')
+        clearQuestion.innerHTML = ""
+        
+        
+        
+        let questionBoxSelector = document.getElementById('questionBox');
+        let firstQuestion = document.createElement('li')
+        firstQuestion.setAttribute("class","questions")
+        firstQuestion.textContent = GuessQuestionFour
+        questionBoxSelector.appendChild(firstQuestion)
+        
+        
+        let answerBoxSelector = document.getElementById('answerBox')
+        
+        
+        var answerOneButton = document.createElement("button");
+        answerOneButton.innerHTML = GuessAnswerOne4;
+        var firstAnswer = document.createElement('li')
+        firstAnswer.setAttribute("class","answer")
+        firstAnswer.textContent = GuessAnswerOne4
+        
+        answerBoxSelector.appendChild(answerOneButton)
+        
+        
+        var answerTwoButton = document.createElement("button");
+        answerTwoButton.innerHTML = GuessAnswerTwo4;
+        var secondAnswer = document.createElement('li')
+        secondAnswer.setAttribute("class","answer")
+        secondAnswer.textContent = GuessAnswerTwo4
+        
+        answerBoxSelector.appendChild(answerTwoButton)
+        
+        var answerThreeButton = document.createElement("button");
+        answerThreeButton.innerHTML = GuessAnswerThree4;
+        var thirdAnswer = document.createElement('li')
+        thirdAnswer.setAttribute("class","answer")
+        thirdAnswer.textContent = GuessAnswerThree4
+        
+        answerBoxSelector.appendChild(answerThreeButton)
+        
+        var answerFourButton = document.createElement("button");
+        answerFourButton.innerHTML = GuessAnswerFour4;
+        var forthAnswer = document.createElement('li')
+        forthAnswer.setAttribute("class","answer")
+        forthAnswer.textContent = GuessAnswerFour4
+        
+        answerBoxSelector.appendChild(answerFourButton)
+        
+        }
