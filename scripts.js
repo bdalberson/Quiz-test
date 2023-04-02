@@ -6,6 +6,20 @@ var secondsLeft = 60;
 var timerDisplay = document.getElementById("timer")
 var timeClass = document.querySelector(".time");
 
+function setTime() {
+
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    
+    timerDisplay.textContent = secondsLeft
+    if(secondsLeft === 0) {
+        Page5()}}, 1000);
+    function stopFunction() {
+        clearInterval(timerInterval);
+        } 
+        
+    }
+
 
 
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
@@ -311,6 +325,7 @@ function Page3() {
         }
 
         function Page5() {
+            setTime.stopFunction
             timerDisplay.style.display = 'none';
             clearElement = document.getElementById('questionBox')
             clearElement.innerHTML = ""
@@ -345,12 +360,3 @@ function Page3() {
             // displayHighScoreList = "   High Scorers are " + localStorage.getItem("user") + " " + localStorage.getItem("score")
             // HighScoreCounter.innerHTML = (userName + " Your Total Score is " + userScore + displayHighScoreList + ".")
         }
-function setTime() {
-
-var timerInterval = setInterval(function() {
-secondsLeft--;
-
-timerDisplay.textContent = secondsLeft
-if(secondsLeft === 0) {
-    Page5()}}, 1000); 
-}
