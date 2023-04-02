@@ -316,9 +316,12 @@ function Page3() {
 
 
             userName = prompt("Please enter your initials");
-            localStorage.setItem(userName, UserScore);
+
+            var user = {userName,UserScore};
+            localStorage.setItem("user",userName, UserScore);
             let HighScoreCounter = document.getElementById('main');
-            HighScoreCounter.innerHTML = (userName + " Your Total Score is " + UserScore)
+            displayHighScoreList = "   High Scorers are " + localStorage.getItem(user)
+            HighScoreCounter.innerHTML = (userName + " Your Total Score is " + UserScore + displayHighScoreList + ".")
         }
 function setTime() {
 

@@ -1,9 +1,10 @@
-/* html
+html
 {
     width: 100%;
     height: 100%;
     background-image:linear-gradient(#9391FF, #FBF0FF);
-} */
+    color: whitesmoke;
+}
 
 .head{
     padding-top: 50x;
