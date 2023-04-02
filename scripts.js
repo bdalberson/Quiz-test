@@ -335,6 +335,8 @@ function Page3() { //same as Page2
             
             clearQuestion = document.getElementById('answerBox')
             clearQuestion.innerHTML = ""
+            updateHeader = document.getElementById('headname')
+            updateHeader.innerHTML = "High Score List"
 
 
             userName = prompt("Please enter your initials"); //prompts user for name for the highscore
@@ -355,6 +357,6 @@ function Page3() { //same as Page2
             let HighScoreCounter = document.getElementById('main');
             HighScoreCounter.innerHTML = ""
             for (let i in scoreList){  //displays scores for each item in the score list and displays a message
-            HighScoreCounter.innerHTML += (scoreList[i].userName + " Your Total Score is " + scoreList[i].userScore + "." + "<br>")
+            HighScoreCounter.innerHTML += (scoreList[i].userName + "'s Score is " + scoreList[i].userScore + "." + "<br>")
             }
         }

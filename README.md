@@ -54,7 +54,7 @@ clearElement.innerHTML = ""
 
 clearQuestion = document.getElementById('answerBox')
 clearQuestion.innerHTML = ""
-
+}
 ```
 
 
