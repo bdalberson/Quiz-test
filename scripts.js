@@ -1,12 +1,12 @@
-var userScore = 0
-var secondsLeft = 60;
+var userScore = 0 //keeps track of user score,  starts at 0 and goes up by 1 for each correct answer
+var secondsLeft = 60; //this is for the timer, 60 seconds or 1 minute is the timer for the game
 
 
 
-var timerDisplay = document.getElementById("timer")
-var timeClass = document.querySelector(".time");
+var timerDisplay = document.getElementById("timer")  //gets the timer element to dynanically update
+var timeClass = document.querySelector(".time"); //grabs time from the browser to use for the timer
 
-function setTime() {
+function setTime() { //function that starts the timer, ends the game if no time left, and has a function for stopping the timer at game end
 
     var timerInterval = setInterval(function() {
     secondsLeft--;
@@ -20,7 +20,7 @@ function setTime() {
         
     }
 
-
+//below is just the store of the questions and the multiple choice answers for each
 
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
 
@@ -66,15 +66,18 @@ var GuessAnswerThree4 = "C"
 var GuessAnswerFour4 = "Java"
 
 
-const startButton = document.getElementById("startbutton");
+//above is just the store of the questions and the multiple choice answers for each
+
+
+const startButton = document.getElementById("startbutton"); //start button for games, grabs click and starts, starts timer
 startButton.addEventListener("click", function() {
 setTime();
 startButton.style.display = 'none';
 
-let questionBoxSelector = document.getElementById('questionBox');
-let answerBoxSelector = document.getElementById('answerBox')
+let questionBoxSelector = document.getElementById('questionBox'); //grabber for question box
+let answerBoxSelector = document.getElementById('answerBox') //grabber for answer box
 
-
+//dynamically adds questions and answer buttons
 let firstQuestion = document.createElement('li')
 firstQuestion.setAttribute("class","questions")
 firstQuestion.textContent = GuessQuestionOne
@@ -123,22 +126,22 @@ forthAnswer.textContent = GuessAnswerFour
 answerBoxSelector.appendChild(answerFourButton)
 });
 
-function Page2w(){
-    userScore += 1
-    secondsLeft += 10
-    Page2()
+function Page2w(){ //Page(number)w buttons are the correct answer selection it ups the users score and time and then runs the function that the rest of the buttons use
+    userScore += 1 //ups user score for correct answer
+    secondsLeft += 10 //next page decreases user score and this function runs next page so this adds 10 to balance it out.  Display is not updated until score is balanced out so this is great and invisible to user
+    Page2() //runs the next page function that runs on every non-win button
 }
 
 function Page2() {
-secondsLeft -= 10
-timerDisplay.textContent = secondsLeft
-clearElement = document.getElementById('questionBox')
+secondsLeft -= 10 //loses 10 seconds for an incorrect answer
+timerDisplay.textContent = secondsLeft  //updates timer to show user their new time
+clearElement = document.getElementById('questionBox') //clears out the page so it can be written to again
 clearElement.innerHTML = ""
 
 clearQuestion = document.getElementById('answerBox')
 clearQuestion.innerHTML = ""
 
-
+//dynamically builds next page buttons
 
 let questionBoxSelector = document.getElementById('questionBox');
 let firstQuestion = document.createElement('li')
@@ -189,13 +192,13 @@ answerBoxSelector.appendChild(answerFourButton)
 
 }
 
-function Page3w(){
+function Page3w(){ //same as Page2w
     userScore += 1
     secondsLeft += 10
     Page3()
 }
 
-function Page3() {
+function Page3() { //same as Page2
     secondsLeft -= 10
     clearElement = document.getElementById('questionBox')
     clearElement.innerHTML = ""
@@ -254,13 +257,13 @@ function Page3() {
     
     }
 
-    function Page4w() {
+    function Page4w() { //same as Page2w
         userScore += 1
         secondsLeft += 10
         Page4()
     }
 
-    function Page4() {
+    function Page4() { //same as Page 2
         secondsLeft -= 10
         clearElement = document.getElementById('questionBox')
         clearElement.innerHTML = ""
@@ -319,14 +322,14 @@ function Page3() {
         
         }
 
-        function Page5w(){
+        function Page5w(){ //same as Page 2w
             userScore += 1
             Page5()
         }
 
-        function Page5() {
-            setTime.stopFunction
-            timerDisplay.style.display = 'none';
+        function Page5() { //progresses to the Game Over screen
+            setTime.stopFunction //stops the timer
+            timerDisplay.style.display = 'none'; //clears the timer display
             clearElement = document.getElementById('questionBox')
             clearElement.innerHTML = ""
             
@@ -334,29 +337,24 @@ function Page3() {
             clearQuestion.innerHTML = ""
 
 
-            userName = prompt("Please enter your initials");
+            userName = prompt("Please enter your initials"); //prompts user for name for the highscore
 
-            const scoreList = JSON.parse(localStorage.getItem("scorelist")) || []
+            const scoreList = JSON.parse(localStorage.getItem("scorelist")) || [] //keeps a list of highscores saved in LocalStorage
 
-            const user = {
+            const user = { //user object to store name and score
                 userScore,
                 userName,
             }
 
-            scoreList.push(user)  
-            scoreList.sort(function(a,b){
+            scoreList.push(user)  //adds to high score
+            scoreList.sort(function(a,b){ //sorts high score highest to lowest
                 return b.userScore - a.userScore
             
             })
-            localStorage.setItem("scorelist", JSON.stringify(scoreList))
-            // localStorage.setItem("user",userName);
-            // localStorage.setItem("score", userScore)
+            localStorage.setItem("scorelist", JSON.stringify(scoreList)) //stores scores 
             let HighScoreCounter = document.getElementById('main');
             HighScoreCounter.innerHTML = ""
-            for (let i in scoreList){
-                // displayHighScoreList = "   High Scorers are " + localStorage.getItem("user") + " " + localStorage.getItem("score")
+            for (let i in scoreList){  //displays scores for each item in the score list and displays a message
             HighScoreCounter.innerHTML += (scoreList[i].userName + " Your Total Score is " + scoreList[i].userScore + "." + "<br>")
             }
-            // displayHighScoreList = "   High Scorers are " + localStorage.getItem("user") + " " + localStorage.getItem("score")
-            // HighScoreCounter.innerHTML = (userName + " Your Total Score is " + userScore + displayHighScoreList + ".")
         }

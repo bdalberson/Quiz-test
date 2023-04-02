@@ -1,4 +1,5 @@
-html
+/* Styles the page and makes it dynamic to fit different screen sizes.  Works on mobile andd browser */
+html                                
 {
     width: 100%;
     height: 100%;
