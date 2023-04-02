@@ -9,7 +9,6 @@ html
 .head{
     padding-top: 50x;
     border-style: solid;
-    border-color: black;
     right: 50%;
     left: 50%;
     text-align: center;
@@ -18,16 +17,14 @@ html
 .time{
     width: 10%;
     border: solid;
-    border-color: black;
     float: right;
-    color: red;
+    font: red;
 }
 
 .main{
     width: 100%;
     height: 730px;
     border-style: solid;
-    border-color: black;
     flex:auto;
     display: flex;
     flex: 1 0 900px; 
@@ -37,7 +34,6 @@ html
 
 .question{
     border-style: solid;
-    border-color: black;
     width: 45%;
     float: left;
     height: 80%;
@@ -48,7 +44,6 @@ html
 
 .answers{
     border-style: solid;
-    border-color: black;
     width: 45%;
     float: right;
     height: 80%;
