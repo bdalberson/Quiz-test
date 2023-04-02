@@ -1,74 +1,92 @@
 # Quiz-test
 
-Web APIs Challenge: Code Quiz
-As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges.
+| Technology Used         | Resource URL           | 
+| ------------- |:-------------:| 
+| HTML    | [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | 
+| CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      |   
+| Git | [https://git-scm.com/](https://git-scm.com/)     |    
+| JavaScript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)     
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this module’s Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This module’s coursework will teach you all the skills you need to succeed in this assignment.
+## Description 
 
-note
-Coding assessments are an important part of the interview process for developers. In fact, employers often use them to filter out job candidates with a cut-off score. To help you prepare, we’ve developed a set of technical interview questions that you can answer throughout the course. The difficulty level of these questions will increase as you become a more proficient developer. If you take advantage of these opportunities to practice, you should be well-prepared to shine during the technical interview process toward the end of this course!
+[Visit the Deployed Site](https://bdalberson.github.io/Quiz-test/)
 
-User Story
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-Acceptance Criteria
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-Mock-Up
-The following animation demonstrates the application functionality:
 
-A GIF demonstrates a functioning quiz with a timer.
 
-Grading Requirements
-note
-If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
+## Code Refactor Example
 
-A repository that has no code
 
-A repository that includes a unique name but nothing else
+Below is the timer function, it starts andd stops the timer and ends the game when time runs out
 
-A repository that includes only a README file but nothing else
+```javascript
+function setTime() { //function that starts the timer, ends the game if no time left, and has a function for stopping the timer at game end
 
-A repository that only includes starter code
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    
+    timerDisplay.textContent = secondsLeft
+    if(secondsLeft === 0) {
+        Page5()}}, 1000);
+    function stopFunction() {
+        clearInterval(timerInterval);
+        } 
+        
+    }
+```
 
-This Challenge is graded based on the following criteria:
+Below is a little piece of magic that goes runs when an answer is selected.  It goes to the next page, but if you click the winning(w) button there's more magic.
+I was able to use the fact that the display is not updated immediately to hide the fact that I always subtract 10 seconds, but I add 10 seconds for the winner so
+when it updates the UI its always consistent.
 
-Technical Acceptance Criteria: 40%
-Satisfies all of the above acceptance criteria.
-Deployment: 32%
-Application deployed at live URL.
+```javascript
 
-Application loads with no errors.
+function Page2w(){ //Page(number)w buttons are the correct answer selection it ups the users score and time and then runs the function that the rest of the buttons use
+    userScore += 1 //ups user score for correct answer
+    secondsLeft += 10 //next page decreases user score and this function runs next page so this adds 10 to balance it out.  Display is not updated until score is balanced out so this is great and invisible to user
+    Page2() //runs the next page function that runs on every non-win button
+}
 
-Application GitHub URL submitted.
+function Page2() {
+secondsLeft -= 10 //loses 10 seconds for an incorrect answer
+timerDisplay.textContent = secondsLeft  //updates timer to show user their new time
+clearElement = document.getElementById('questionBox') //clears out the page so it can be written to again
+clearElement.innerHTML = ""
 
-GitHub repository that contains application code.
+clearQuestion = document.getElementById('answerBox')
+clearQuestion.innerHTML = ""
 
-Application Quality: 15%
-Application user experience is intuitive and easy to navigate.
+```
 
-Application user interface style is clean and polished.
 
-Application resembles the mock-up functionality provided in the Challenge instructions.
+## Usage 
 
-Repository Quality: 13%
-Repository has a unique name.
+Just head to the site and select the Start Button to begin the quiz.  You will have 1 minute too finish and each incorrect answer subtracts 10 seconds. A High Score list is saved to Local Storage so you can keep refreshing the page and trying to get a higher score. 
 
-Repository follows best practices for file structure and naming conventions.
+## Learning Points 
 
-Repository follows best practices for class/id naming conventions, indentation, high-quality comments, etc.
 
-Repository contains multiple descriptive commit messages.
+Huge jump in learning on this project.  I got my process down.  I begin with a big list of todos on a notepad.  Then, without styling I construct the HTML of where I want everything to do with black outline boxes.  Then I start dynamically updating the page. At the end I style it to how I want it visually.  
 
-Repository contains a high-quality README file with description, screenshot, and link to deployed application.
+Learned how to use local storage, learned how to make a timer, learned how to dynamically update a page and its view. 
 
+
+## Author Info
+
+QA professional turning into coder 
+
+* [Portfolio](https://bdalberson.github.io/Course2Biopage/)
+* [LinkedIn](https://www.linkedin.com/in/brian-alberson-464b2271/)
+* [Github](https://github.com/bdalberson)
+```
+
+## Credits
+
+
+Many thanks to TA and tutor sessions which both were needed in pulling this off.   
+
+---
+
+## Tests
+Tested and works on mobile. test buttons and layout on varrying screens and sizes.  
+
+---
