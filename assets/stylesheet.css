@@ -34,6 +34,7 @@ html
 
 .question{
     border-style: solid;
+    font-size: x-large;
     width: 45%;
     float: left;
     height: 80%;
@@ -44,6 +45,7 @@ html
 
 .answers{
     border-style: solid;
+    font-size: x-large;
     width: 45%;
     float: right;
     height: 80%;

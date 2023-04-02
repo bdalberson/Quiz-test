@@ -1,7 +1,11 @@
-var UserScore = 0
+var userScore = 0
+var secondsLeft = 60;
+
+
+
 var timerDisplay = document.getElementById("timer")
 var timeClass = document.querySelector(".time");
-var secondsLeft = 60;
+
 
 
 var GuessQuestionOne = 'What does MS stand for in "MS-Dos"?'
@@ -37,15 +41,15 @@ var GuessAnswerThree3 = "Etherum"
 
 var GuessAnswerFour3 = "USDC"
 
-var GuessQuestionFour = "Which artist had the most hit singles?"
+var GuessQuestionFour = "Which of the following is NOT an example of the Object Oriented Programming Language?"
 
-var GuessAnswerOne4 = "Elvis Presley"
+var GuessAnswerOne4 = "Ruby"
 
-var GuessAnswerTwo4 = "The Rolling Stones"
+var GuessAnswerTwo4 = "Python"
 
-var GuessAnswerThree4 = "The Beatles"
+var GuessAnswerThree4 = "C"
 
-var GuessAnswerFour4 = "Madonna"
+var GuessAnswerFour4 = "Java"
 
 
 const startButton = document.getElementById("startbutton");
@@ -106,7 +110,7 @@ answerBoxSelector.appendChild(answerFourButton)
 });
 
 function Page2w(){
-    UserScore += 1
+    userScore += 1
     secondsLeft += 10
     Page2()
 }
@@ -172,7 +176,7 @@ answerBoxSelector.appendChild(answerFourButton)
 }
 
 function Page3w(){
-    UserScore += 1
+    userScore += 1
     secondsLeft += 10
     Page3()
 }
@@ -237,7 +241,7 @@ function Page3() {
     }
 
     function Page4w() {
-        UserScore += 1
+        userScore += 1
         secondsLeft += 10
         Page4()
     }
@@ -302,7 +306,7 @@ function Page3() {
         }
 
         function Page5w(){
-            UserScore += 1
+            userScore += 1
             Page5()
         }
 
@@ -317,11 +321,29 @@ function Page3() {
 
             userName = prompt("Please enter your initials");
 
-            var user = {userName,UserScore};
-            localStorage.setItem("user",userName, UserScore);
+            const scoreList = JSON.parse(localStorage.getItem("scorelist")) || []
+
+            const user = {
+                userScore,
+                userName,
+            }
+
+            scoreList.push(user)  
+            scoreList.sort(function(a,b){
+                return b.userScore - a.userScore
+            
+            })
+            localStorage.setItem("scorelist", JSON.stringify(scoreList))
+            // localStorage.setItem("user",userName);
+            // localStorage.setItem("score", userScore)
             let HighScoreCounter = document.getElementById('main');
-            displayHighScoreList = "   High Scorers are " + localStorage.getItem(user)
-            HighScoreCounter.innerHTML = (userName + " Your Total Score is " + UserScore + displayHighScoreList + ".")
+            HighScoreCounter.innerHTML = ""
+            for (let i in scoreList){
+                // displayHighScoreList = "   High Scorers are " + localStorage.getItem("user") + " " + localStorage.getItem("score")
+            HighScoreCounter.innerHTML += (scoreList[i].userName + " Your Total Score is " + scoreList[i].userScore + "." + "<br>")
+            }
+            // displayHighScoreList = "   High Scorers are " + localStorage.getItem("user") + " " + localStorage.getItem("score")
+            // HighScoreCounter.innerHTML = (userName + " Your Total Score is " + userScore + displayHighScoreList + ".")
         }
 function setTime() {
 
