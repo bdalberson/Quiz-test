@@ -4,7 +4,6 @@ var secondsLeft = 60; //this is for the timer, 60 seconds or 1 minute is the tim
 
 
 var timerDisplay = document.getElementById("timer")  //gets the timer element to dynanically update
-var timeClass = document.querySelector(".time"); //grabs time from the browser to use for the timer
 
 function setTime() { //function that starts the timer, ends the game if no time left, and has a function for stopping the timer at game end
 
