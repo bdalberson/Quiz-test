@@ -37,9 +37,9 @@ var GuessQuestionTwo = "Which gaming console came first?"
 
 var GuessAnswerOne2 = "ColecoVision"
 
-var GuessAnswerTwo2 = "Intellivision"
+var GuessAnswerTwo2 = "PlayStation"
 
-var GuessAnswerThree2 = "Magnavox Odyssey²"
+var GuessAnswerThree2 = "Nintendo Entertainment System"
 
 var GuessAnswerFour2 = "Atari 2600"
 
@@ -50,7 +50,7 @@ var GuessAnswerOne3 = "Bored Ape"
 
 var GuessAnswerTwo3 = "Bitcoin"
 
-var GuessAnswerThree3 = "Etherum"
+var GuessAnswerThree3 = "Ethereum"
 
 var GuessAnswerFour3 = "USDC"
 
