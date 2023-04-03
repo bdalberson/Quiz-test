@@ -57,6 +57,34 @@ clearQuestion.innerHTML = ""
 }
 ```
 
+This is my HighScore list creator. Quite an impressive bit of coding(Kappa).  The || [] part is key as it makes the scorelist create even in case of null or empty. Its able to sort high to low, it works with localStorage and it has a loop that functions only as long as there are items in the list.
+
+```javascript
+
+
+            userName = prompt("Please enter your initials"); //prompts user for name for the highscore
+
+            const scoreList = JSON.parse(localStorage.getItem("scorelist")) || [] //keeps a list of highscores saved in LocalStorage
+
+            const user = { //user object to store name and score
+                userScore,
+                userName,
+            }
+
+            scoreList.push(user)  //adds to high score
+            scoreList.sort(function(a,b){ //sorts high score highest to lowest
+                return b.userScore - a.userScore
+            
+            })
+            localStorage.setItem("scorelist", JSON.stringify(scoreList)) //stores scores 
+            let HighScoreCounter = document.getElementById('main');
+            HighScoreCounter.innerHTML = ""
+            for (let i in scoreList){  //displays scores for each item in the score list and displays a message
+            HighScoreCounter.innerHTML += (scoreList[i].userName + "'s Score is " + scoreList[i].userScore + "." + "<br>")
+            }
+
+```
+
 
 ## Usage 
 
