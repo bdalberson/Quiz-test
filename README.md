@@ -16,7 +16,7 @@
 ## Code Refactor Example
 
 
-Below is the timer function, it starts andd stops the timer and ends the game when time runs out
+Below is the timer function, it starts and stops the timer and ends the game when time runs out
 
 ```javascript
 function setTime() { //function that starts the timer, ends the game if no time left, and has a function for stopping the timer at game end
@@ -36,7 +36,7 @@ function setTime() { //function that starts the timer, ends the game if no time 
 
 Below is a little piece of magic that goes runs when an answer is selected.  It goes to the next page, but if you click the winning(w) button there's more magic.
 I was able to use the fact that the display is not updated immediately to hide the fact that I always subtract 10 seconds, but I add 10 seconds for the winner so
-when it updates the UI its always consistent.
+when it updates the UI is always consistent.
 
 ```javascript
 
